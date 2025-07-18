@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare Hospital</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for Inter font and general body */
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-gray-50 text-gray-800;
+        }
+        .container {
+            @apply mx-auto px-4 sm:px-6 lg:px-8;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a7d9f7; /* Light blue */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #60a5fa; /* Deeper blue */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-white shadow-md py-4 sticky top-0 z-50">
+        <div class="container flex justify-between items-center">
+            <!-- Logo/Site Title -->
+            <a href="#" class="flex items-center space-x-2 text-2xl font-bold text-blue-600 rounded-lg p-2 hover:text-blue-700 transition-colors">
+                <i class="fas fa-hospital-alt text-3xl"></i>
+                <span>MediCare</span>
+            </a>
+
+            <!-- Navigation Menu (Desktop) -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#home" class="text-gray-600 hover:text-blue-600 font-medium transition-colors rounded-md px-3 py-2">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition-colors rounded-md px-3 py-2">About Us</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600 font-medium transition-colors rounded-md px-3 py-2">Services</a>
+                <a href="#doctors" class="text-gray-600 hover:text-blue-600 font-medium transition-colors rounded-md px-3 py-2">Doctors</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium transition-colors rounded-md px-3 py-2">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md p-2">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 shadow-inner">
+            <nav class="flex flex-col items-center space-y-2">
+                <a href="#home" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 w-full text-center py-2 px-4 rounded-md transition-colors">Home</a>
+                <a href="#about" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 w-full text-center py-2 px-4 rounded-md transition-colors">About Us</a>
+                <a href="#services" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 w-full text-center py-2 px-4 rounded-md transition-colors">Services</a>
+                <a href="#doctors" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 w-full text-center py-2 px-4 rounded-md transition-colors">Doctors</a>
+                <a href="#contact" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 w-full text-center py-2 px-4 rounded-md transition-colors">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 md:py-32 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://placehold.co/1920x1080/0000FF/FFFFFF?text=Hospital+Hero+Image');"></div>
+        <div class="container relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
+                Your Health, Our Priority
+            </h1>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto animate-fade-in-up delay-100">
+                Providing compassionate and comprehensive healthcare services with a focus on patient well-being and advanced medical treatments.
+            </p>
+            <a href="#appointment" class="inline-block bg-white text-blue-700 hover:bg-blue-100 px-8 py-4 rounded-full text-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out animate-fade-in-up delay-200">
+                Book an Appointment
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="container grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-6">About Our Hospital</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    MediCare Hospital is a leading healthcare institution dedicated to providing exceptional medical care. With state-of-the-art facilities and a team of highly skilled professionals, we are committed to delivering personalized and effective treatments to our patients.
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Our mission is to improve the health and well-being of the communities we serve through compassionate care, innovative research, and comprehensive medical education. We strive for excellence in every aspect of our service.
+                </p>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Experienced Medical Professionals</li>
+                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Advanced Technology & Equipment</li>
+                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Patient-Centered Care Approach</li>
+                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>24/7 Emergency Services</li>
+                </ul>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="https://placehold.co/600x400/60A5FA/FFFFFF?text=About+Us+Image" alt="Hospital Building" class="rounded-xl shadow-lg w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-blue-50">
+        <div class="container text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-4">Our Comprehensive Services</h2>
+            <p class="text-gray-600 mb-12 max-w-2xl mx-auto">
+                We offer a wide range of medical services designed to meet all your healthcare needs, from routine check-ups to specialized treatments.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="text-5xl text-blue-500 mb-6">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Cardiology</h3>
+                    <p class="text-gray-600">
+                        Expert care for heart conditions, including diagnostics, treatment, and rehabilitation.
+                    </p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="text-5xl text-blue-500 mb-6">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Neurology</h3>
+                    <p class="text-gray-600">
+                        Specialized treatment for disorders of the brain, spinal cord, and nervous system.
+                    </p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="text-5xl text-blue-500 mb-6">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Orthopedics</h3>
+                    <p class="text-gray-600">
+                        Comprehensive care for musculoskeletal injuries and conditions.
+                    </p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="text-5xl text-blue-500 mb-6">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Pediatrics</h3>
+                    <p class="text-gray-600">
+                        Dedicated healthcare services for infants, children, and adolescents.
+                    </p>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="text-5xl text-blue-500 mb-6">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Dentistry</h3>
+                    <p class="text-gray-600">
+                        Full range of dental services, from routine cleanings to complex procedures.
+                    </p>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="text-5xl text-blue-500 mb-6">
+                        <i class="fas fa-x-ray"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Radiology</h3>
+                    <p class="text-gray-600">
+                        Advanced imaging services for accurate diagnosis and treatment planning.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="py-16 md:py-24 bg-white">
+        <div class="container text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-4">Meet Our Expert Doctors</h2>
+            <p class="text-gray-600 mb-12 max-w-2xl mx-auto">
+                Our team of highly qualified and compassionate doctors is dedicated to providing the best possible care.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Doctor Card 1 -->
+                <div class="bg-blue-50 p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                    <img src="https://placehold.co/200x200/60A5FA/FFFFFF?text=Dr.+Smith" alt="Dr. John Smith" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-200">
+                    <h3 class="text-xl font-semibold text-gray-800">Dr. John Smith</h3>
+                    <p class="text-blue-600 mb-2">Cardiologist</p>
+                    <p class="text-gray-600 text-sm">Specializing in heart disease prevention and treatment.</p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Doctor Card 2 -->
+                <div class="bg-blue-50 p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                    <img src="https://placehold.co/200x200/60A5FA/FFFFFF?text=Dr.+Jane" alt="Dr. Jane Doe" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-200">
+                    <h3 class="text-xl font-semibold text-gray-800">Dr. Jane Doe</h3>
+                    <p class="text-blue-600 mb-2">Neurologist</p>
+                    <p class="text-gray-600 text-sm">Expert in neurological disorders and brain health.</p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Doctor Card 3 -->
+                <div class="bg-blue-50 p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                    <img src="https://placehold.co/200x200/60A5FA/FFFFFF?text=Dr.+Alex" alt="Dr. Alex Lee" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-200">
+                    <h3 class="text-xl font-semibold text-gray-800">Dr. Alex Lee</h3>
+                    <p class="text-blue-600 mb-2">Pediatrician</p>
+                    <p class="text-gray-600 text-sm">Dedicated to the health and well-being of children.</p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Doctor Card 4 -->
+                <div class="bg-blue-50 p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                    <img src="https://placehold.co/200x200/60A5FA/FFFFFF?text=Dr.+Maria" alt="Dr. Maria Garcia" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-200">
+                    <h3 class="text-xl font-semibold text-gray-800">Dr. Maria Garcia</h3>
+                    <p class="text-blue-600 mb-2">Orthopedic Surgeon</p>
+                    <p class="text-gray-600 text-sm">Specializing in bone and joint surgeries.</p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="appointment" class="py-16 md:py-24 bg-blue-600 text-white">
+        <div class="container text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Book Your Appointment Today</h2>
+            <p class="text-blue-100 mb-12 max-w-2xl mx-auto">
+                Fill out the form below to schedule your visit with our medical experts. We will confirm your appointment shortly.
+            </p>
+
+            <form class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg text-gray-800">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="name" class="block text-left text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-left text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your@example.com" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="phone" class="block text-left text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 (123) 456-7890" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                    </div>
+                    <div>
+                        <label for="date" class="block text-left text-sm font-medium text-gray-700 mb-1">Preferred Date</label>
+                        <input type="date" id="date" name="date" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="department" class="block text-left text-sm font-medium text-gray-700 mb-1">Department</label>
+                    <select id="department" name="department" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-white" required>
+                        <option value="">Select Department</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="neurology">Neurology</option>
+                        <option value="orthopedics">Orthopedics</option>
+                        <option value="pediatrics">Pediatrics</option>
+                        <option value="dentistry">Dentistry</option>
+                        <option value="radiology">Radiology</option>
+                        <option value="general">General Medicine</option>
+                    </select>
+                </div>
+                <div class="mb-8">
+                    <label for="message" class="block text-left text-sm font-medium text-gray-700 mb-1">Your Message (Optional)</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Briefly describe your reason for appointment..." class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-700 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-300">
+                    Submit Appointment
+                    <i class="fas fa-calendar-check ml-2"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 md:py-24 bg-blue-50">
+        <div class="container text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-4">What Our Patients Say</h2>
+            <p class="text-gray-600 mb-12 max-w-2xl mx-auto">
+                Hear from our satisfied patients about their experience at MediCare Hospital.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial Card 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center">
+                    <img src="https://placehold.co/80x80/60A5FA/FFFFFF?text=P1" alt="Patient 1" class="w-20 h-20 rounded-full mb-4 object-cover border-2 border-blue-200">
+                    <p class="text-gray-700 italic mb-4">
+                        "The care I received at MediCare Hospital was exceptional. The doctors and nurses were incredibly kind and professional."
+                    </p>
+                    <div class="text-yellow-400 text-lg mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="font-semibold text-gray-800">- Sarah M.</p>
+                </div>
+
+                <!-- Testimonial Card 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center">
+                    <img src="https://placehold.co/80x80/60A5FA/FFFFFF?text=P2" alt="Patient 2" class="w-20 h-20 rounded-full mb-4 object-cover border-2 border-blue-200">
+                    <p class="text-gray-700 italic mb-4">
+                        "From admission to discharge, everything was smooth. The facilities are top-notch and the staff truly cares."
+                    </p>
+                    <div class="text-yellow-400 text-lg mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="font-semibold text-gray-800">- David L.</p>
+                </div>
+
+                <!-- Testimonial Card 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center">
+                    <img src="https://placehold.co/80x80/60A5FA/FFFFFF?text=P3" alt="Patient 3" class="w-20 h-20 rounded-full mb-4 object-cover border-2 border-blue-200">
+                    <p class="text-gray-700 italic mb-4">
+                        "I highly recommend MediCare Hospital. They provided excellent and timely medical attention when I needed it most."
+                    </p>
+                    <div class="text-yellow-400 text-lg mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="font-semibold text-gray-800">- Emily R.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-gray-800 text-gray-300 py-12 md:py-16">
+        <div class="container grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- About Us -->
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">MediCare Hospital</h3>
+                <p class="text-sm leading-relaxed mb-4">
+                    Committed to providing world-class healthcare services with compassion and integrity. Your health is our utmost priority.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 text-xl transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#home" class="hover:text-blue-400 transition-colors text-sm">Home</a></li>
+                    <li><a href="#about" class="hover:text-blue-400 transition-colors text-sm">About Us</a></li>
+                    <li><a href="#services" class="hover:text-blue-400 transition-colors text-sm">Services</a></li>
+                    <li><a href="#doctors" class="hover:text-blue-400 transition-colors text-sm">Doctors</a></li>
+                    <li><a href="#appointment" class="hover:text-blue-400 transition-colors text-sm">Appointment</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Contact Info</h3>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-center"><i class="fas fa-map-marker-alt mr-3 text-blue-400"></i>123 Hospital Road, Health City, HC 12345</li>
+                    <li class="flex items-center"><i class="fas fa-phone-alt mr-3 text-blue-400"></i>+1 (234) 567-8900</li>
+                    <li class="flex items-center"><i class="fas fa-envelope mr-3 text-blue-400"></i>info@medicare.com</li>
+                    <li class="flex items-center"><i class="fas fa-clock mr-3 text-blue-400"></i>Mon - Sat: 9:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+
+            <!-- Newsletter (Optional) -->
+            <div class="lg:col-span-1 md:col-span-3">
+                <h3 class="text-xl font-bold text-white mb-4">Newsletter</h3>
+                <p class="text-sm mb-4">Stay updated with our latest news and health tips.</p>
+                <form class="flex flex-col sm:flex-row gap-2">
+                    <input type="email" placeholder="Your Email" class="px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 flex-grow">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-semibold transition-colors">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500 text-sm">
+            &copy; 2025 MediCare Hospital. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked (for smooth scrolling)
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
